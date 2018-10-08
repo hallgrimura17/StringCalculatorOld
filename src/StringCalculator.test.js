@@ -16,3 +16,6 @@ it("should return the sum of the two arguments", () => {
 it("should return the sum of the eight arguments", () => {
     expect(add("2,3", "2,3", "2,3", "2,3", "2,3", "2,3", "2,3", "2,3")).toBe(40);
 });
+it("should return the sum of the two arguments with multiple numbers", () => {
+    expect(add("2,3,5", "5,6,7,8")).toBe(36);
+});

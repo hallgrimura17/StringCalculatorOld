@@ -10,7 +10,10 @@ function add()
         else if(arguments[i].includes(","))
         {
             var numberArray = arguments[i].split(",");
-            sum += parseInt(numberArray[0]) + parseInt(numberArray[1]);
+            for(var j = 0; j < numberArray.length; j++)
+            {
+                sum += parseInt(numberArray[j]);
+            }
         }
         else
         {
