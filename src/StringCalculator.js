@@ -7,9 +7,11 @@ function add()
         {
             continue;
         }
+
         else if(arguments[i].includes(","))
         {
             var numberArray = arguments[i].split(",");
+            
             sum += sumOfArray(numberArray);
         }
         else
@@ -26,7 +28,15 @@ function sumOfArray(numberArray)
     var total = 0;
     for(var i = 0; i < numberArray.length; i++)
     {
-        total += parseInt(numberArray[i]);
+        if(numberArray[i].includes("\n"))
+        {
+            var numberArray2 = numberArray[i].split("\n");
+            total += sumOfArray(numberArray2);
+        }
+        else
+        {
+            total += parseInt(numberArray[i]);
+        }
     }
     return total;
 }
