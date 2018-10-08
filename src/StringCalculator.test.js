@@ -22,3 +22,6 @@ it("should return the sum of the two arguments with multiple numbers", () => {
 it("should return the sum of the two arguments with multiple numbers", () => {
     expect(add("2,3,5", "5\n6,7,8")).toBe(36);
 });
+it("should return undefined since its invalid", () => {
+    expect(add("2,3,5", "5\n,7,8")).toBe(undefined);
+});

@@ -7,7 +7,10 @@ function add()
         {
             continue;
         }
-
+        else if(arguments[i].includes(",\n") || arguments[i].includes("\n,"))
+        {
+            return undefined;
+        }
         else if(arguments[i].includes(","))
         {
             var numberArray = arguments[i].split(",");
