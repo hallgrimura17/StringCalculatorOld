@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "clean": "rm -rf node_modules",
+    "watch": "jest --watchAll",
+    "run": "node app"
   },
   "repository": {
     "type": "git",
