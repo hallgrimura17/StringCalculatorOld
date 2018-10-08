@@ -10,3 +10,9 @@ it("should return the number when only a number is in the string", () => {
 it("should return the sum of the two numbers", () => {
     expect(add("2,3")).toBe(5);
 });
+it("should return the sum of the two arguments", () => {
+    expect(add("2,3", "5,6")).toBe(16);
+});
+it("should return the sum of the eight arguments", () => {
+    expect(add("2,3", "2,3", "2,3", "2,3", "2,3", "2,3", "2,3", "2,3")).toBe(40);
+});
