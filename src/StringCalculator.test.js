@@ -31,6 +31,6 @@ it("should return the negatives and say they are not allowed", () => {
 it("should return the negatives and say they are not allowed", () => {
     expect(add("2,-3,5", "5,-7,-8,2,5", "5,-9,-10")).toBe("Negatives not allowed: -3,-7,-8,-9,-10");
 });
-it("should return the negatives and say they are not allowed", () => {
+it("should not add the numbers that are above 1000 but should add 1000", () => {
     expect(add("2,3,5000", "5, 6, 1000, 1001")).toBe(1016);
 });
