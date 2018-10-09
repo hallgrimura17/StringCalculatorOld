@@ -34,3 +34,9 @@ it("should return the negatives and say they are not allowed", () => {
 it("should not add the numbers that are above 1000 but should add 1000", () => {
     expect(add("2,3,5000", "5, 6, 1000, 1001")).toBe(1016);
 });
+it("should add all the numbers with ; between them", () => {
+    expect(add("//;\n1;2")).toBe(3);
+});
+it("should add all the numbers with ; between them", () => {
+    expect(add("//;\n1;2;5")).toBe(8);
+});

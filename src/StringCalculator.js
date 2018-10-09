@@ -5,6 +5,12 @@ function add()
     var reg = new RegExp(',|\n');
     for(var i = 0; i < arguments.length; i++)
     {
+        if(arguments[i].includes("//"))
+        {
+            newReg = arguments[i].split("\n");
+            arguments[i] = newReg[1];
+            reg = new RegExp(newReg[0].substring(2));
+        }
         if(arguments[i] == "")
         {
             continue;
