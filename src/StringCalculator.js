@@ -1,6 +1,8 @@
 function add()
 {
-    var sum = 0;
+    var numbers = [];
+    var negativeNumbers = [];
+    var reg = new RegExp(',|\n');
     for(var i = 0; i < arguments.length; i++)
     {
         if(arguments[i] == "")
@@ -11,38 +13,25 @@ function add()
         {
             return undefined;
         }
-        else if(arguments[i].includes(","))
-        {
-            var numberArray = arguments[i].split(",");
-            
-            sum += sumOfArray(numberArray);
-        }
         else
         {
-            sum += parseInt(arguments[i]);
+            numbers = addArrayToArray(numbers, arguments[i].split(reg));
         }
+    }
+    var sum = 0;
+    for(var i = 0; i < numbers.length; i++)
+    {
+        sum += parseInt(numbers[i]);
     }
     return sum;
-    
 }
-
-function sumOfArray(numberArray)
+function addArrayToArray(array1, array2)
 {
-    var total = 0;
-    for(var i = 0; i < numberArray.length; i++)
+    for(var i = 0; i < array2.length; i++)
     {
-        if(numberArray[i].includes("\n"))
-        {
-            var numberArray2 = numberArray[i].split("\n");
-            total += sumOfArray(numberArray2);
-        }
-        else
-        {
-            total += parseInt(numberArray[i]);
-        }
+        array1.push(array2[i]);
     }
-    return total;
+    return array1;
 }
-
 
 module.exports = add;
