@@ -25,3 +25,9 @@ it("should return the sum of the two arguments with multiple numbers", () => {
 it("should return undefined since its invalid", () => {
     expect(add("2,3,5", "5\n,7,8")).toBe(undefined);
 });
+it("should return the negatives and say they are not allowed", () => {
+    expect(add("2,3,5", "5,-7,-8")).toBe("Negatives not allowed: -7,-8");
+});
+it("should return the negatives and say they are not allowed", () => {
+    expect(add("2,-3,5", "5,-7,-8,2,5", "5,-9,-10")).toBe("Negatives not allowed: -3,-7,-8,-9,-10");
+});

@@ -19,11 +19,32 @@ function add()
         }
     }
     var sum = 0;
+    var number;
     for(var i = 0; i < numbers.length; i++)
     {
-        sum += parseInt(numbers[i]);
+        number = parseInt(numbers[i]);
+        if(number < 0)
+        {
+            negativeNumbers.push(number);
+        }
+        else
+        {
+            sum += number;
+        }
     }
-    return sum;
+    if(negativeNumbers.length == 0)
+    {
+        return sum;
+    }
+    else
+    {
+        var negativeString = "Negatives not allowed: " + negativeNumbers[0];
+        for(var i = 1; i < negativeNumbers.length; i++)
+        {
+            negativeString += "," + negativeNumbers[i];
+        }
+        return negativeString;
+    }
 }
 function addArrayToArray(array1, array2)
 {
