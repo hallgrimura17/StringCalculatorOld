@@ -27,6 +27,10 @@ function add()
         {
             negativeNumbers.push(number);
         }
+        else if(number > 1000)
+        {
+            continue;
+        }
         else
         {
             sum += number;
